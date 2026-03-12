@@ -28,14 +28,24 @@ python -m http.server 8080
 
 ## 部署到 Cloudflare Pages
 
-1. 将本目录推送到 Git 仓库。
-2. 在 Cloudflare Pages 新建项目并连接该仓库。
-3. 构建设置：
+有两种常见方式：直接在 Cloudflare Pages 控制台创建项目（手动连接仓库），或使用 GitHub Actions 自动部署。仓库已包含一个示例工作流：[@/.github/workflows/deploy.yml](.github/workflows/deploy.yml)。
+
+自动部署（GitHub Actions）：
+
+1. 在 GitHub 仓库的 `Settings -> Secrets and variables -> Actions` 中添加以下 Secrets：
+   - `CLOUDFLARE_API_TOKEN`：需要包含 Pages 写入权限的 API Token（Scopes: `Pages:Edit`，建议限制为特定账户/资源）。
+   - `CLOUDFLARE_ACCOUNT_ID`：你的 Cloudflare 账户 ID。
+2. 打开 `/.github/workflows/deploy.yml`，把 `projectName` 替换为你在 Cloudflare Pages 创建的项目名（或保持默认并在 Cloudflare 控制台对应项目名称）。
+3. 推送到 `main` 分支会触发工作流并把仓库目录（或你在 workflow 中指定的目录）部署到 Cloudflare Pages。
+
+手动在 Pages 控制台创建项目：
+
+1. 将本目录推送到 Git 仓库并在 Cloudflare Pages 新建项目，连接到该仓库。
+2. 构建设置：
    - Framework preset: `None`
-   - Build command: 留空
-   - Build output directory: `/`
-4. 在 Pages 项目中绑定自定义域名 `awacat.cc`。
-5. 确保子域（如 `blog.awacat.cc`、`me.awacat.cc`）已有正确 DNS 记录并可访问。
+   - Build command: 留空（若你有构建步骤，填写相应命令）
+   - Build output directory: `/` 或你的构建产物目录（如 `public` 或 `dist`）
+3. 在 Pages 项目中绑定自定义域名 `awacat.cc`，并确保 DNS 解析指向 Cloudflare。
 
 ## 目录结构
 
