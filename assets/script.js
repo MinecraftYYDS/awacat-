@@ -1,0 +1,51 @@
+const NAV_LINKS = [
+  {
+    name: "博客",
+    domain: "blog.awacat.cc",
+    url: "https://blog.awacat.cc",
+    description: "文章、笔记与更新记录。",
+    status: "已上线"
+  },
+  {
+    name: "联系方式",
+    domain: "me.awacat.cc",
+    url: "https://me.awacat.cc",
+    description: "我的各种各样的社交网络账号",
+    status: "已上线"
+  },
+  {
+    name: "虚无",
+    domain: "null.awacat.cc",
+    url: "https://null.awacat.cc",
+    description: "未知",
+    status: "已上线"
+  }
+];
+
+function createCard(item) {
+  const statusHtml = item.status ? `<span class="status">${item.status}</span>` : "";
+
+  return `
+    <a class="card" href="${item.url}" target="_blank" rel="noopener noreferrer">
+      <div class="card-title-row">
+        <h2>${item.name}</h2>
+        ${statusHtml}
+      </div>
+      <p class="desc">${item.description}</p>
+      <span class="domain">${item.domain}</span>
+    </a>
+  `;
+}
+
+function renderNav() {
+  const grid = document.getElementById("nav-grid");
+  grid.innerHTML = NAV_LINKS.map(createCard).join("");
+}
+
+function setYear() {
+  const year = document.getElementById("year");
+  year.textContent = String(new Date().getFullYear());
+}
+
+renderNav();
+setYear();
