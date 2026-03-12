@@ -24,7 +24,7 @@ const NAV_LINKS = [
     name: "牛子小助手",
     domain: "dick.awacat.cc",
     url: "https://dick.awacat.cc",
-    description: "一个牛子小助手工具。(复刻自 zzzdajb/DickHelper)",
+    description: "一个牛子小助手工具。(复刻自 zzzdajb/DickHelper 并删除广告)",
     status: "已上线"
 
   }
