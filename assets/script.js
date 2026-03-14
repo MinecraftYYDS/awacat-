@@ -55,5 +55,49 @@ function setYear() {
   year.textContent = String(new Date().getFullYear());
 }
 
+function renderQQBots() {
+  const QQ_BOTS = [
+    {
+      name: '机器人管理界面',
+      domain: 'bot.awacat.cc',
+      url: 'https://bot.awacat.cc',
+      description: '管理QQ机器人在群里的界面。'
+    },
+    {
+      name: '机器人napcat后台',
+      domain: 'napcat.awacat.cc',
+      url: 'https://napcat.awacat.cc',
+      description: 'QQ机器人napcat后台。'
+    }
+  ];
+
+  const navGrid = document.getElementById('nav-grid');
+  const navSection = navGrid.closest('section');
+
+  const hr = document.createElement('hr');
+
+  const section = document.createElement('section');
+  section.className = 'qq-bots';
+  section.setAttribute('aria-label', 'QQ 机器人相关');
+
+  const h2 = document.createElement('h2');
+  h2.textContent = 'QQ机器人相关:';
+  section.appendChild(h2);
+
+  const gridDiv = document.createElement('div');
+  gridDiv.className = 'grid';
+  gridDiv.innerHTML = QQ_BOTS.map(createCard).join('');
+  section.appendChild(gridDiv);
+
+  if (navSection && navSection.parentNode) {
+    navSection.parentNode.insertBefore(hr, navSection.nextSibling);
+    navSection.parentNode.insertBefore(section, hr.nextSibling);
+  } else {
+    document.querySelector('.container').appendChild(hr);
+    document.querySelector('.container').appendChild(section);
+  }
+}
+
 renderNav();
+renderQQBots();
 setYear();
