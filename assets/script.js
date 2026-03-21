@@ -27,6 +27,13 @@ const NAV_LINKS = [
     description: "一个牛子小助手工具。(复刻自 zzzdajb/DickHelper 并删除广告)",
     status: "已上线"
 
+  },
+  {
+    name: "今天吃什么",
+    domain: "eat.awacat.cc",
+    url: "https://eat.awacat.cc",
+    description: "帮你决定今天吃什么。(复刻自 ryanuo/whatToEat 并删除一些动画)",
+    status: "已上线"
   }
 ];
 
