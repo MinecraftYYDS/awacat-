@@ -34,6 +34,13 @@ const NAV_LINKS = [
     url: "https://eat.awacat.cc",
     description: "帮你决定今天吃什么。(复刻自 ryanuo/whatToEat 并删除一些动画)",
     status: "已上线"
+  },
+  {
+    name: "网盘(个人使用)",
+    domain: "drive.awacat.cc",
+    url: "https://drive.awacat.cc",
+    description: "个人使用的网盘。"
+
   }
 ];
 
