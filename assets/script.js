@@ -39,8 +39,8 @@ const NAV_LINKS = [
     name: "网盘(个人使用)",
     domain: "drive.awacat.cc",
     url: "https://drive.awacat.cc",
-    description: "个人使用的网盘。"
-
+    description: "个人使用的网盘。",
+    status: "个人使用"
   }
 ];
 
