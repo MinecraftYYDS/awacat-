@@ -36,6 +36,14 @@ const NAV_LINKS = [
     status: "已上线"
   },
   {
+    name: "语录图生成",
+    domain: "quote.awacat.cc",
+    url: "https://quote.awacat.cc",
+    description: "生成语录图片的工具。",
+    status: "已上线"
+
+  },
+  {
     name: "网盘(个人使用)",
     domain: "drive.awacat.cc",
     url: "https://drive.awacat.cc",
