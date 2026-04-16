@@ -21,6 +21,14 @@ const NAV_LINKS = [
     status: "已上线"
   },
   {
+    name: "语录图生成",
+    domain: "quote.awacat.cc",
+    url: "https://quote.awacat.cc",
+    description: "生成语录图片的工具。",
+    status: "已上线"
+
+  },
+  {
     name: "牛子小助手",
     domain: "dick.awacat.cc",
     url: "https://dick.awacat.cc",
@@ -34,14 +42,6 @@ const NAV_LINKS = [
     url: "https://eat.awacat.cc",
     description: "帮你决定今天吃什么。(复刻自 ryanuo/whatToEat 并删除一些动画)",
     status: "已上线"
-  },
-  {
-    name: "语录图生成",
-    domain: "quote.awacat.cc",
-    url: "https://quote.awacat.cc",
-    description: "生成语录图片的工具。",
-    status: "已上线"
-
   },
   {
     name: "网盘(个人使用)",
