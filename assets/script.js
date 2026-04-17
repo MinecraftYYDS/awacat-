@@ -30,8 +30,8 @@ const NAV_LINKS = [
   },
   {
     name: "动图生成",
-    domain: "quote.awacat.cc",
-    url: "https://quote.awacat.cc",
+    domain: "gif.awacat.cc",
+    url: "https://gif.awacat.cc",
     description: "生成动图的工具(支持GIF或APNG导出)",
     status: "已上线"
   },
