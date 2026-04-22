@@ -90,6 +90,12 @@ function renderQQBots() {
       domain: 'napcat.awacat.cc',
       url: 'https://napcat.awacat.cc',
       description: 'QQ机器人napcat后台。'
+    },
+    {
+      name: '机器人git远程管理',
+      domain: 'botgit.awacat.cc',
+      url: 'https://botgit.awacat.cc',
+      description: 'QQ机器人git远程管理界面。'
     }
   ];
 
