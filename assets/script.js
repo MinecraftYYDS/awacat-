@@ -14,6 +14,13 @@ const NAV_LINKS = [
     status: "已上线"
   },
   {
+    name: "恋爱记录",
+    domain: "love.awacat.cc",
+    url: "https://love.awacat.cc",
+    description: "记录我恋爱经历的小网站。",
+    status: "已上线"
+  },
+  {
     name: "虚无",
     domain: "null.awacat.cc",
     url: "https://null.awacat.cc",
