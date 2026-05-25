@@ -94,6 +94,99 @@ h1 {
   color: var(--text);
 }
 
+.intro-section {
+  display: grid;
+  place-items: center;
+  margin-bottom: 22px;
+  position: relative;
+}
+
+.love-deco {
+  position: absolute;
+  top: 50%;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(141, 125, 255, 0.42);
+  background: rgba(141, 125, 255, 0.14);
+  color: #dcd9ff;
+  font-size: 13px;
+  letter-spacing: 0.6px;
+  white-space: nowrap;
+  transform: translateY(-50%) rotate(-4deg);
+  box-shadow: 0 10px 26px rgba(6, 10, 20, 0.46);
+  pointer-events: none;
+}
+
+.love-deco-left {
+  left: 12px;
+}
+
+.love-deco-right {
+  right: 12px;
+  transform: translateY(-50%) rotate(4deg);
+}
+
+@media (max-width: 860px) {
+  .love-deco {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+}
+
+.intro-card {
+  position: relative;
+  width: min(680px, 100%);
+  margin: 0;
+  padding: 28px 24px;
+  gap: 12px;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  border: 1px solid rgba(255, 100, 120, 0.35);
+  border-radius: 18px;
+  background:
+    linear-gradient(90deg, rgba(255, 100, 120, 0.3), rgba(141, 125, 255, 0.15), rgba(255, 100, 120, 0.3)) top/100% 2px no-repeat,
+    radial-gradient(300px 150px at 0% 0%, rgba(255, 100, 120, 0.08), transparent 65%),
+    radial-gradient(300px 150px at 100% 100%, rgba(141, 125, 255, 0.08), transparent 65%),
+    linear-gradient(160deg, rgba(20, 14, 30, 0.95), rgba(16, 12, 28, 0.95));
+  box-shadow: 0 0 30px rgba(255, 100, 120, 0.08), 0 0 60px rgba(141, 125, 255, 0.05);
+}
+
+.intro-card .card-title-row {
+  width: 100%;
+  justify-content: center;
+  gap: 12px;
+}
+
+.intro-card h2 {
+  font-size: clamp(20px, 3.1vw, 26px);
+  letter-spacing: 0.3px;
+}
+
+.intro-card .desc {
+  margin: 0 auto;
+  max-width: 44ch;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+.intro-card .domain {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 4px 10px;
+  border: 1px solid rgba(255, 100, 120, 0.35);
+  border-radius: 999px;
+  background: rgba(255, 100, 120, 0.08);
+  color: #ffb3be;
+}
+
+.intro-card .status {
+  color: #ffd9df;
+  background: rgba(255, 100, 120, 0.16);
+  border-color: rgba(255, 100, 120, 0.38);
+}
+
 hr {
   border: none;
   border-top: 1px solid var(--card-border);
@@ -200,7 +293,55 @@ hr {
   font-size: 13px;
 }
 
+/* Falling hearts animation inside card */
+.hearts-left, .hearts-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 180px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hearts-left { left: 0; }
+.hearts-right { right: 0; }
+
+.hearts-left span, .hearts-right span {
+  position: absolute;
+  color: rgba(255, 100, 120, 0.6);
+  font-size: 16px;
+  animation: heartfall 3.5s linear infinite backwards;
+}
+
+.hearts-left span:nth-child(1) { left: 5%; animation-delay: 0s; }
+.hearts-left span:nth-child(2) { left: 20%; animation-delay: 1.2s; font-size: 12px; }
+.hearts-left span:nth-child(3) { left: 38%; animation-delay: 2.4s; font-size: 18px; }
+.hearts-left span:nth-child(4) { left: 55%; animation-delay: 0.6s; font-size: 11px; }
+.hearts-left span:nth-child(5) { left: 72%; animation-delay: 1.8s; font-size: 14px; }
+.hearts-left span:nth-child(6) { left: 88%; animation-delay: 3s; font-size: 13px; }
+.hearts-right span:nth-child(1) { right: 5%; animation-delay: 0.5s; }
+.hearts-right span:nth-child(2) { right: 20%; animation-delay: 1.8s; font-size: 12px; }
+.hearts-right span:nth-child(3) { right: 38%; animation-delay: 2.8s; font-size: 18px; }
+.hearts-right span:nth-child(4) { right: 55%; animation-delay: 1s; font-size: 11px; }
+.hearts-right span:nth-child(5) { right: 72%; animation-delay: 2.2s; font-size: 14px; }
+.hearts-right span:nth-child(6) { right: 88%; animation-delay: 0.3s; font-size: 13px; }
+
+@keyframes heartfall {
+  0% { top: -20%; opacity: 0; transform: translateX(0) rotate(0deg); }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { top: 100%; opacity: 0; transform: translateX(10px) rotate(30deg); }
+}
+
 @media (max-width: 640px) {
+  .love-deco {
+    display: none;
+  }
+
+  .hearts-left, .hearts-right {
+    width: 80px;
+  }
+
   .container {
     padding-top: 34px;
   }
