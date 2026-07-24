@@ -39,6 +39,12 @@
     </footer>
   </main>
   
-  <script src="assets/script.js"></script>
+  <script>
+    (() => {
+      const script = document.createElement('script');
+      script.src = 'assets/script.js?v=' + Date.now();
+      document.body.appendChild(script);
+    })();
+  </script>
 </body>
 </html>
