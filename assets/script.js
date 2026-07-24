@@ -51,6 +51,20 @@ const NAV_LINKS = [
     status: "已上线"
   },
   {
+    name: "IT 工具",
+    domain: "it.awacat.cc",
+    url: "https://it.awacat.cc",
+    description: "IT工具。",
+    status: "已上线"
+  },
+  {
+    name: "2048",
+    domain: "2048.awacat.cc",
+    url: "https://2048.awacat.cc",
+    description: "经典的2048游戏。",
+    status: "已上线"
+  },
+  {
     name: "网盘(个人使用)",
     domain: "drive.awacat.cc",
     url: "https://drive.awacat.cc",
