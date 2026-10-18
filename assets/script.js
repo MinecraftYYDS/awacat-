@@ -63,13 +63,6 @@ const NAV_LINKS = [
     url: "https://2048.awacat.cc",
     description: "经典的2048游戏。",
     status: "已上线"
-  },
-  {
-    name: "网盘(个人使用)",
-    domain: "drive.awacat.cc",
-    url: "https://drive.awacat.cc",
-    description: "个人使用的网盘。",
-    status: "个人使用"
   }
 ];
 
